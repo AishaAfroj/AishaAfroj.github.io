@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light dark">
-<meta name="theme-color" content="#f5f4fb" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#181a41" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#fbf7ef" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#151716" media="(prefers-color-scheme: dark)">
 <title>{{ $title }}</title>
 <meta name="description" content="{{ $description }}">
 <meta name="author" content="{{ .Site.Params.author }}">
@@ -29,8 +29,7 @@
 <script>
   try {
     const savedTheme = localStorage.getItem('aisha-theme');
-    const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    document.documentElement.dataset.theme = savedTheme || (systemDark ? 'dark' : 'light');
+    document.documentElement.dataset.theme = savedTheme || 'light';
   } catch (_) {}
 </script>
 
