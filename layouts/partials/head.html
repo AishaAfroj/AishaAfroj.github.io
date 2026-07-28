@@ -1,0 +1,58 @@
+{{- $title := cond .IsHome .Site.Title (printf "%s | %s" .Title .Site.Title) -}}
+{{- $description := .Description | default .Site.Params.description -}}
+{{- $canonical := .Permalink -}}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#eef2f6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#07111f" media="(prefers-color-scheme: dark)">
+<title>{{ $title }}</title>
+<meta name="description" content="{{ $description }}">
+<meta name="author" content="{{ .Site.Params.author }}">
+<link rel="canonical" href="{{ $canonical }}">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="{{ .Site.Title }}">
+<meta property="og:title" content="{{ $title }}">
+<meta property="og:description" content="{{ $description }}">
+<meta property="og:url" content="{{ $canonical }}">
+<meta property="og:image" content="{{ .Site.Params.ogImage | absURL }}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ $title }}">
+<meta name="twitter:description" content="{{ $description }}">
+<meta name="twitter:image" content="{{ .Site.Params.ogImage | absURL }}">
+
+<script>
+  try {
+    const savedTheme = localStorage.getItem('aisha-theme');
+    const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    document.documentElement.dataset.theme = savedTheme || (systemDark ? 'dark' : 'light');
+  } catch (_) {}
+</script>
+
+{{ $style := resources.Get "css/main.css" | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}">
+
+{{- $sameAs := slice -}}
+{{- range hugo.Data.portfolio.profile.social -}}
+  {{- $sameAs = $sameAs | append .url -}}
+{{- end -}}
+{{- $profileSource := resources.Get "images/aisha-profile.png" -}}
+{{- $profileStructured := $profileSource.Fill "720x900 webp q88 Center" -}}
+{{- $person := dict
+  "@context" "https://schema.org"
+  "@type" "Person"
+  "name" hugo.Data.portfolio.profile.name
+  "url" .Site.BaseURL
+  "image" $profileStructured.Permalink
+  "jobTitle" hugo.Data.portfolio.profile.role
+  "email" (printf "mailto:%s" hugo.Data.portfolio.profile.email)
+  "address" (dict "@type" "PostalAddress" "addressLocality" "Dhaka" "addressCountry" "BD")
+  "alumniOf" (dict "@type" "CollegeOrUniversity" "name" "Daffodil International University")
+  "sameAs" $sameAs
+-}}
+<script type="application/ld+json">{{ $person | jsonify | safeJS }}</script>

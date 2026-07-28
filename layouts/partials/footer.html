@@ -1,0 +1,16 @@
+{{ $p := hugo.Data.portfolio }}
+<footer class="site-footer">
+  <div class="footer-shell">
+    <div>
+      <a class="footer-brand" href="{{ "/" | relURL }}">{{ $p.profile.name }}</a>
+      <p>Cybersecurity, IT support, and applied analytics.</p>
+    </div>
+    <div class="footer-links" aria-label="Social links">
+      {{ range $p.profile.social }}
+        <a href="{{ .url }}" target="_blank" rel="noopener noreferrer">{{ .label }}</a>
+      {{ end }}
+      <a href="mailto:{{ $p.profile.email }}">Email</a>
+    </div>
+    <p class="footer-meta">&copy; {{ now.Year }} {{ $p.profile.name }}. Built with Hugo.</p>
+  </div>
+</footer>

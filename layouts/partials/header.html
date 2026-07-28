@@ -1,0 +1,32 @@
+{{ $p := hugo.Data.portfolio }}
+<header class="site-header" data-header>
+  <div class="nav-shell">
+    <a class="brand" href="{{ "/" | relURL }}" aria-label="Aisha Afroj, home">
+      <span class="brand__mark" aria-hidden="true">{{ $p.profile.initials }}</span>
+      <span class="brand__text">
+        <strong>{{ $p.profile.name }}</strong>
+        <small>Portfolio</small>
+      </span>
+    </a>
+
+    <nav class="nav" aria-label="Primary navigation" data-nav>
+      {{ range $p.navigation }}
+        {{ $isActive := eq $.RelPermalink .url }}
+        <a class="nav__link{{ if $isActive }} is-active{{ end }}" href="{{ .url | relURL }}"{{ if $isActive }} aria-current="page"{{ end }}>{{ .label }}</a>
+      {{ end }}
+    </nav>
+
+    <div class="nav-actions">
+      <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch color theme">
+        <span aria-hidden="true" class="theme-toggle__dot"></span>
+        <span class="theme-toggle__label">Theme</span>
+      </button>
+      <button class="menu-toggle" type="button" data-menu-toggle aria-controls="site-nav" aria-expanded="false">Menu</button>
+    </div>
+  </div>
+  <nav class="mobile-nav" id="site-nav" aria-label="Mobile navigation" data-mobile-nav hidden>
+    {{ range $p.navigation }}
+      <a href="{{ .url | relURL }}">{{ .label }}</a>
+    {{ end }}
+  </nav>
+</header>
