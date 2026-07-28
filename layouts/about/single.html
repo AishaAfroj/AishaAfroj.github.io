@@ -1,0 +1,58 @@
+{{ define "main" }}
+{{ $p := hugo.Data.portfolio }}
+<section class="page-hero section-shell">
+  <div class="reveal">
+    <p class="section-kicker">About <span>01</span></p>
+    <h1>Grounded in computer science. Growing through security and data.</h1>
+  </div>
+  <div class="page-hero__aside reveal reveal--delay">
+    <p class="large-copy">{{ $p.profile.about }}</p>
+  </div>
+</section>
+
+<section class="section-shell section-block">
+  <div class="section-heading reveal">
+    <p class="section-kicker">How I work <span>02</span></p>
+    <h2>Professional values that shape how I learn and contribute.</h2>
+  </div>
+  <div class="value-grid">
+    {{ range $index, $value := $p.values }}
+      <article class="value-card reveal">
+        <span>0{{ add $index 1 }}</span>
+        <h3>{{ $value.title }}</h3>
+        <p>{{ $value.description }}</p>
+      </article>
+    {{ end }}
+  </div>
+</section>
+
+<section class="section-shell section-block">
+  <div class="section-heading reveal">
+    <p class="section-kicker">Education <span>03</span></p>
+    <h2>A continuous academic path from computer science into data.</h2>
+  </div>
+  <div class="timeline reveal">
+    {{ range $p.education }}
+      <article class="timeline__item">
+        <div class="timeline__period">{{ .period }}</div>
+        <div>
+          <p class="card-label">{{ .institution }}</p>
+          <h3>{{ .degree }}</h3>
+          <p>{{ .focus }} · {{ .detail }}</p>
+        </div>
+      </article>
+    {{ end }}
+  </div>
+</section>
+
+<section class="section-shell personal-note reveal">
+  <div>
+    <p class="section-kicker">Beyond work <span>04</span></p>
+    <h2>Curiosity continues outside the classroom.</h2>
+  </div>
+  <div class="personal-note__lists">
+    <div><h3>Languages</h3><p>{{ delimit $p.profile.languages " · " }}</p></div>
+    <div><h3>Interests</h3><p>{{ delimit $p.profile.interests " · " }}</p></div>
+  </div>
+</section>
+{{ end }}
