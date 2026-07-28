@@ -21,13 +21,13 @@
       {{ $portrait := resources.Get "images/aisha-profile.png" }}
       {{ $portrait480 := $portrait.Fit "480x640 webp q88" }}
       {{ $portrait720 := $portrait.Fit "720x960 webp q90" }}
-      <img class="portrait" src="{{ $portrait720.RelPermalink }}" srcset="{{ $portrait480.RelPermalink }} 480w, {{ $portrait720.RelPermalink }} 720w" sizes="(max-width: 720px) 16rem, 18rem" width="{{ $portrait720.Width }}" height="{{ $portrait720.Height }}" alt="Professional portrait of Aisha Afroj" fetchpriority="high">
-      <div class="portrait-frame__note">
-        <span class="status-dot" aria-hidden="true"></span>
-        <div>
-          <small>Current focus</small>
-          <strong>Security &amp; data</strong>
-        </div>
+      <img class="portrait" src="{{ $portrait720.RelPermalink }}" srcset="{{ $portrait480.RelPermalink }} 480w, {{ $portrait720.RelPermalink }} 720w" sizes="(max-width: 720px) 18rem, 20rem" width="{{ $portrait720.Width }}" height="{{ $portrait720.Height }}" alt="Professional portrait of Aisha Afroj" fetchpriority="high">
+    </div>
+    <div class="portrait-frame__note">
+      <span class="status-dot" aria-hidden="true"></span>
+      <div>
+        <small>Current focus</small>
+        <strong>Security &amp; data</strong>
       </div>
     </div>
   </div>
