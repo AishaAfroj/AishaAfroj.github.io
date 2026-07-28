@@ -1,0 +1,22 @@
+{{ define "main" }}
+{{ $p := hugo.Data.portfolio }}
+<section class="contact-page section-shell">
+  <div class="contact-page__intro reveal">
+    <p class="section-kicker">Contact <span>01</span></p>
+    <h1>Let's start a thoughtful conversation.</h1>
+    <p class="large-copy">I am open to early-career opportunities, research-aligned collaboration, and professional connections across cybersecurity, IT support, and data-focused work.</p>
+  </div>
+  <div class="contact-card reveal reveal--delay">
+    <p class="card-label">Best way to reach me</p>
+    <a class="contact-email" href="mailto:{{ $p.profile.email }}">{{ $p.profile.email }}</a>
+    <p>I usually respond to professional messages by email. Please include a short introduction and the reason for reaching out.</p>
+    <div class="contact-card__links">
+      {{ range $p.profile.social }}<a class="button button--quiet" href="{{ .url }}" target="_blank" rel="noopener noreferrer">{{ .label }}</a>{{ end }}
+    </div>
+    <div class="contact-card__privacy">
+      <strong>Privacy note</strong>
+      <p>My phone number and references are not displayed publicly. Certificate copies are privacy-safe; verified employers may request original documents directly.</p>
+    </div>
+  </div>
+</section>
+{{ end }}
