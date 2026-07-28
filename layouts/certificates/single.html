@@ -1,0 +1,47 @@
+{{ define "main" }}
+{{ $p := hugo.Data.portfolio }}
+<section class="page-hero page-hero--credentials section-shell">
+  <div class="reveal">
+    <p class="section-kicker">Certificates <span>01</span></p>
+    <h1>Verified training and professional experience.</h1>
+  </div>
+  <div class="page-hero__aside reveal reveal--delay">
+    <p class="large-copy">These documents support my cybersecurity training and four-month internship. Public copies are carefully redacted to protect personal information while keeping the professional evidence clear.</p>
+  </div>
+</section>
+
+<section class="section-shell certificates-page-grid">
+  {{ range $index, $credential := $p.credentials }}
+    <article class="credential-document credential-document--{{ $credential.orientation }} reveal">
+      <div class="credential-document__visual">
+        <span class="document-index">0{{ add $index 1 }}</span>
+        <a href="{{ $credential.file | relURL }}" target="_blank" rel="noopener" aria-label="Open {{ $credential.title }} PDF">
+          <img src="{{ $credential.preview | relURL }}" alt="Privacy-safe preview of Aisha Afroj's {{ $credential.title }} credential" loading="lazy">
+        </a>
+      </div>
+      <div class="credential-document__content">
+        <p class="card-label">{{ $credential.kind }}</p>
+        <h2>{{ $credential.title }}</h2>
+        <dl class="credential-meta">
+          <div><dt>Issuer</dt><dd>{{ $credential.issuer }}</dd></div>
+          <div><dt>Period</dt><dd>{{ $credential.period }}</dd></div>
+          <div><dt>Status</dt><dd>Verified document</dd></div>
+        </dl>
+        <p>{{ $credential.note }}</p>
+        <a class="button button--primary" href="{{ $credential.file | relURL }}" target="_blank" rel="noopener">Open certificate PDF <span aria-hidden="true">&nearr;</span></a>
+      </div>
+    </article>
+  {{ end }}
+</section>
+
+<section class="section-shell verification-note reveal">
+  <div>
+    <p class="section-kicker">Verification <span>02</span></p>
+    <h2>Original documents are available when required.</h2>
+  </div>
+  <div>
+    <p>For privacy, public copies hide residential and family details. Verified employers may request the original documents directly by email.</p>
+    <a class="text-link" href="mailto:{{ $p.profile.email }}?subject=Credential%20verification%20request">Request verification <span aria-hidden="true">&rarr;</span></a>
+  </div>
+</section>
+{{ end }}
