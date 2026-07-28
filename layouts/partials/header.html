@@ -1,8 +1,12 @@
 {{ $p := hugo.Data.portfolio }}
+{{ $avatar := resources.Get "images/aisha-profile.png" }}
+{{ $avatarSmall := $avatar.Resize "160x webp q90" }}
 <header class="site-header" data-header>
   <div class="nav-shell">
     <a class="brand" href="{{ "/" | relURL }}" aria-label="Aisha Afroj, home">
-      <span class="brand__mark" aria-hidden="true">{{ $p.profile.initials }}</span>
+      <span class="brand__mark" aria-hidden="true">
+        <img src="{{ $avatarSmall.RelPermalink }}" width="{{ $avatarSmall.Width }}" height="{{ $avatarSmall.Height }}" alt="">
+      </span>
       <span class="brand__text">
         <strong>{{ $p.profile.name }}</strong>
         <small>Portfolio</small>
