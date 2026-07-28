@@ -1,0 +1,32 @@
+baseURL: https://aishaafroj.github.io/
+locale: en-US
+title: Aisha Afroj
+enableRobotsTXT: true
+enableGitInfo: false
+disableKinds:
+  - taxonomy
+  - term
+
+params:
+  description: Computer science graduate and data science student focused on cybersecurity, IT support, and applied analytics.
+  author: Aisha Afroj
+  location: Dhaka, Bangladesh
+  email: aishaafrojorpa@gmail.com
+  ogImage: og.png
+
+caches:
+  images:
+    dir: :cacheDir/images
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: false
+
+minify:
+  minifyOutput: true
+
+sitemap:
+  changeFreq: monthly
+  priority: 0.5
+  filename: sitemap.xml
