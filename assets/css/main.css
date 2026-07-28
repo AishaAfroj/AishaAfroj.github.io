@@ -260,12 +260,11 @@ main { overflow: clip; }
 .hero__meta { display: flex; flex-wrap: wrap; gap: .6rem 1.6rem; margin-top: 2.1rem; color: #cfbfb4; font-size: .78rem; }
 .hero__meta span { position: relative; padding-left: 1rem; }
 .hero__meta span::before { content: ""; position: absolute; left: 0; top: .63em; width: .3rem; height: .3rem; border-radius: 50%; background: var(--accent); }
-.hero__portrait-wrap { position: relative; display: flex; align-self: center; justify-content: flex-end; padding-right: 1rem; }
+.hero__portrait-wrap { position: relative; display: flex; align-self: center; flex-direction: column; align-items: flex-end; justify-content: center; padding-right: 1rem; }
 .portrait-frame {
   position: relative;
   width: 100%;
-  max-width: 18rem;
-  margin-left: auto;
+  max-width: 20rem;
   padding: .65rem;
   border: 1px solid transparent;
   border-radius: 1.55rem;
@@ -275,7 +274,7 @@ main { overflow: clip; }
 }
 .portrait-frame::before { content: ""; position: absolute; inset: 1.15rem -1rem -1rem 1.15rem; z-index: -1; border: 1px solid rgba(228, 189, 104, .34); border-radius: 1.55rem; }
 .portrait { width: 100%; height: auto; object-fit: contain; object-position: center; border-radius: 1.05rem; }
-.portrait-frame__note { position: absolute; right: -1.1rem; bottom: 1.7rem; display: flex; align-items: center; gap: .65rem; padding: .75rem .9rem; color: var(--text); border: 1px solid var(--line); border-radius: .85rem; background: var(--surface); box-shadow: var(--shadow-lg); }
+.portrait-frame__note { display: flex; width: 20rem; max-width: 100%; align-items: center; justify-content: center; gap: .65rem; margin-top: .85rem; padding: .75rem .9rem; color: var(--text); border: 1px solid var(--line); border-radius: .85rem; background: var(--surface); box-shadow: var(--shadow-lg); }
 .portrait-frame__note small, .portrait-frame__note strong { display: block; }
 .portrait-frame__note small { color: var(--muted); font-size: .62rem; font-weight: 750; letter-spacing: .1em; text-transform: uppercase; }
 .portrait-frame__note strong { font-size: .9rem; font-weight: 800; }
@@ -525,9 +524,9 @@ main { overflow: clip; }
   .hero__copy { order: 1; }
   .hero__portrait-wrap { order: 2; }
   .hero h1, .page-hero h1 { font-size: clamp(2.9rem, 13.5vw, 4.6rem); }
-  .hero__portrait-wrap { justify-content: center; padding-right: 0; }
-  .portrait-frame { max-width: 16rem; margin-inline: auto; }
-  .portrait-frame__note { right: .4rem; bottom: 1.25rem; }
+  .hero__portrait-wrap { align-items: center; justify-content: center; padding-right: 0; }
+  .portrait-frame { max-width: 18rem; margin-inline: auto; }
+  .portrait-frame__note { width: 18rem; }
   .metrics { grid-template-columns: 1fr; margin-top: -3rem; }
   .section-block { padding-top: 5rem; padding-bottom: 5rem; }
   .section-heading, .profile-intro, .experience-card, .research-feature__inner, .page-hero, .publication-detail__inner, .personal-note, .resume-layout, .contact-page, .credential-document, .verification-note { grid-template-columns: 1fr; }
@@ -569,7 +568,7 @@ main { overflow: clip; }
   .hero__actions, .contact-banner__actions { display: grid; }
   .hero__download { justify-content: center; }
   .button { width: 100%; }
-  .portrait-frame__note { position: static; margin-top: .65rem; box-shadow: none; }
+  .portrait-frame__note { margin-top: .65rem; box-shadow: none; }
   .contact-card__links { display: grid; }
 }
 
