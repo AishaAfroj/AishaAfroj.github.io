@@ -1,0 +1,47 @@
+{{ define "main" }}
+{{ $p := hugo.Data.portfolio }}
+<section class="page-hero page-hero--research section-shell">
+  <div class="reveal">
+    <p class="section-kicker">Research <span>01</span></p>
+    <h1>Exploring how different forecasting models approach the same real-world problem.</h1>
+  </div>
+  <div class="page-hero__aside reveal reveal--delay">
+    <p class="large-copy">My research interests sit at the intersection of applied machine learning, practical comparison, and clear analytical communication.</p>
+  </div>
+</section>
+
+<section class="publication-detail">
+  <div class="section-shell publication-detail__inner">
+    <div class="publication-detail__meta reveal">
+      <p class="card-label">Publication · {{ $p.publication.year }}</p>
+      <p>{{ delimit $p.publication.authors " · " }}</p>
+    </div>
+    <article class="publication-detail__body reveal reveal--delay">
+      <h2>{{ $p.publication.title }}</h2>
+      <p>{{ $p.publication.summary }}</p>
+      <p>{{ $p.publication.contribution }}</p>
+      <div class="topic-row topic-row--dark">
+        {{ range $p.publication.topics }}<span>{{ . }}</span>{{ end }}
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell section-block research-lens">
+  <div class="section-heading reveal">
+    <p class="section-kicker">Research lens <span>02</span></p>
+    <h2>Three approaches, one comparative frame.</h2>
+  </div>
+  <div class="model-grid">
+    <article class="model-card reveal"><span>01</span><h3>ARIMA</h3><p>A classical statistical approach for modelling patterns and dependencies in time-series data.</p></article>
+    <article class="model-card reveal"><span>02</span><h3>Facebook Prophet</h3><p>An additive forecasting approach designed to model trend and seasonality in practical datasets.</p></article>
+    <article class="model-card reveal"><span>03</span><h3>LSTM</h3><p>A recurrent neural-network architecture suited to learning sequential relationships over time.</p></article>
+  </div>
+  <p class="research-disclaimer reveal">This portfolio summary describes the scope of the work without claiming results beyond the available publication information.</p>
+</section>
+
+<section class="section-shell contact-banner reveal">
+  <div><p class="eyebrow"><span></span>Research &amp; collaboration</p><h2>Interested in applied analytics and meaningful technical work.</h2></div>
+  <a class="button button--primary" href="{{ "/contact/" | relURL }}">Start a conversation <span aria-hidden="true">&rarr;</span></a>
+</section>
+{{ end }}
