@@ -19,10 +19,9 @@
   <div class="hero__portrait-wrap reveal reveal--delay">
     <div class="portrait-frame">
       {{ $portrait := resources.Get "images/aisha-profile.png" }}
-      {{ $portrait480 := $portrait.Fill "480x600 webp q88 Center" }}
-      {{ $portrait720 := $portrait.Fill "720x900 webp q88 Center" }}
-      {{ $portrait900 := $portrait.Fill "900x1125 webp q90 Center" }}
-      <img class="portrait" src="{{ $portrait720.RelPermalink }}" srcset="{{ $portrait480.RelPermalink }} 480w, {{ $portrait720.RelPermalink }} 720w, {{ $portrait900.RelPermalink }} 900w" sizes="(max-width: 860px) 80vw, 42vw" width="720" height="900" alt="Professional portrait of Aisha Afroj" fetchpriority="high">
+      {{ $portrait480 := $portrait.Fill "480x480 webp q88 Smart" }}
+      {{ $portrait720 := $portrait.Fill "720x720 webp q90 Smart" }}
+      <img class="portrait" src="{{ $portrait720.RelPermalink }}" srcset="{{ $portrait480.RelPermalink }} 480w, {{ $portrait720.RelPermalink }} 720w" sizes="(max-width: 720px) 16rem, 17rem" width="720" height="720" alt="Professional portrait of Aisha Afroj" fetchpriority="high">
       <div class="portrait-frame__note">
         <span class="status-dot" aria-hidden="true"></span>
         <div>
