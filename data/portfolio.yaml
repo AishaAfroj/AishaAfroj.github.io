@@ -1,0 +1,158 @@
+navigation:
+  - label: Home
+    url: /
+  - label: About
+    url: /about/
+  - label: Research
+    url: /research/
+  - label: Certificates
+    url: /certificates/
+  - label: Resume
+    url: /resume/
+  - label: Contact
+    url: /contact/
+
+profile:
+  name: Aisha Afroj
+  initials: AA
+  role: Computer Science Graduate & Data Science Student
+  headline: Focused on secure systems, reliable support, and data-informed solutions.
+  introduction: Computer science graduate and M.Sc. data science student with verified cybersecurity training, hands-on internship experience, and published research.
+  summary: My academic foundation, cybersecurity internship, and research experience have shaped a practical, growth-minded approach to technology. I care about reliable work, clear communication, and learning through meaningful challenges.
+  about: My path brings together computer science, hands-on cybersecurity exposure, technical support, and a growing focus on data science. I am most energized by work that requires careful thinking, steady execution, and collaboration. As I continue my graduate studies, I am looking for opportunities where I can contribute responsibly while developing deeper technical expertise.
+  location: Dhaka, Bangladesh
+  email: aishaafrojorpa@gmail.com
+  availability: Open to early-career technology opportunities
+  languages:
+    - English
+    - Bangla
+  interests:
+    - Reading
+    - Travelling
+    - Photo editing
+  social:
+    - label: LinkedIn
+      url: https://www.linkedin.com/in/aisha-afroj-9bb565350
+    - label: GitHub
+      url: https://github.com/AishaAfroj
+
+highlights:
+  - value: 4 months
+    label: Cybersecurity internship
+    detail: Practical experience with troubleshooting, infrastructure support, and security issue identification.
+  - value: 1 publication
+    label: Time-series research
+    detail: Comparative work covering ARIMA, Facebook Prophet, and LSTM forecasting approaches.
+  - value: M.Sc. CSE
+    label: Data science major
+    detail: Continuing graduate study at Daffodil International University.
+
+experience:
+  role: Cyber Security Intern
+  company: Goinnovior Limited
+  location: Dhaka, Bangladesh
+  period: December 2024 - April 2025
+  duration: 4 months
+  summary: Supported the cybersecurity team with infrastructure configuration, troubleshooting, maintenance, and security issue resolution in a professional technology environment.
+  highlights:
+    - Assisted with the configuration, troubleshooting, and maintenance of cybersecurity infrastructure.
+    - Helped identify security issues and implement practical solutions with the team.
+    - Applied analytical problem-solving to technical challenges and support tasks.
+    - Communicated technical information clearly and collaborated across day-to-day workflows.
+
+skillGroups:
+  - title: Cybersecurity & Networking
+    number: "01"
+    description: Security-aware thinking grounded in practical internship and training exposure.
+    skills:
+      - Cybersecurity fundamentals
+      - Network administration
+      - Security issue identification
+      - Infrastructure troubleshooting
+  - title: Data & Machine Learning
+    number: "02"
+    description: Academic experience comparing forecasting approaches and communicating technical findings.
+    skills:
+      - Machine learning concepts
+      - Time-series forecasting
+      - Model comparison
+      - Data-driven analysis
+  - title: Enterprise Technology
+    number: "03"
+    description: A reliable, collaborative approach to support work and modern digital environments.
+    skills:
+      - IT support
+      - Microsoft 365 awareness
+      - SharePoint development
+      - Cloud services
+  - title: Professional Strengths
+    number: "04"
+    description: Clear communication, steady learning, and thoughtful problem-solving.
+    skills:
+      - Technical problem-solving
+      - Team collaboration
+      - Communication
+      - Adaptability
+
+education:
+  - degree: M.Sc. in Computer Science and Engineering
+    focus: Major in Data Science
+    institution: Daffodil International University
+    period: 2026 - Present
+    detail: Graduate study focused on data science and long-term technical development.
+  - degree: B.Sc. in Computer Science and Engineering
+    focus: Computer Science and Engineering
+    institution: Daffodil International University
+    period: 2020 - 2024
+    detail: CGPA 3.04 / 4.00
+  - degree: Higher Secondary Certificate
+    focus: Science
+    institution: Dinajpur Government Women's College
+    period: 2016 - 2018
+    detail: GPA 4.00 / 5.00
+  - degree: Secondary School Certificate
+    focus: Secondary education
+    institution: Dinajpur Government Girl's High School
+    period: 2009 - 2016
+    detail: GPA 4.83 / 5.00
+
+publication:
+  title: Performance Comparison of ARIMA, Facebook Prophet, and LSTM in Time Series Sales Predictions
+  authors:
+    - Aisha Afroj
+    - Md. Shahriar Ahamed Ridoy
+  year: "2024"
+  summary: This work compares three widely used time-series forecasting approaches for sales prediction, examining how classical statistical, additive, and neural-network methods can support practical forecasting decisions.
+  contribution: The publication reflects an interest in applied machine learning, structured model comparison, and translating technical analysis into useful conclusions.
+  topics:
+    - ARIMA
+    - Facebook Prophet
+    - LSTM
+    - Time-series forecasting
+    - Sales prediction
+
+credentials:
+  - title: Cyber Security Training
+    kind: Certificate of Completion
+    issuer: Skill Jobs
+    period: December 2024 - April 2025
+    note: Four-month virtual training program; certificate issued May 2025.
+    preview: /images/credentials/cyber-security-certificate.webp
+    file: /files/credentials/aisha-afroj-cyber-security-certificate.pdf
+    orientation: landscape
+  - title: Cyber Security Internship
+    kind: Internship Confirmation
+    issuer: Goinnovior Limited
+    period: December 2024 - April 2025
+    note: Four-month professional internship confirmed by the employer.
+    preview: /images/credentials/internship-certificate.webp
+    file: /files/credentials/aisha-afroj-internship-certificate.pdf
+    orientation: portrait
+
+values:
+  - title: Reliable by default
+    description: I value careful preparation, consistent follow-through, and work that teammates can depend on.
+  - title: Curious with purpose
+    description: I learn best by connecting new ideas to practical problems and measurable outcomes.
+  - title: Clear in collaboration
+    description: I aim to communicate technical information thoughtfully and contribute positively to shared work.
